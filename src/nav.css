@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+
+@media (max-width: 768px) {
+  #company img {
+    margin: 50px 0;
+  }
+}
+
+.typewriter-text {
+  overflow: hidden;
+  position: relative;
+  width: 18em;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 38px;
+  white-space: nowrap;
+
+  animation: typewriter 2.5s steps(24) 1s 1 normal both,
+  blinkTextCursor 1500ms steps(44) infinite normal;
+
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 9em;
+  }
+}
+
+@keyframes blinkTextCursor {
+
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}

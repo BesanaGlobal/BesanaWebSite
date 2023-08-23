@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+#ReturnPolicys {
+    margin-top: 150px;
+    background-color: white;
+}
+
+#ReturnPolicys h {
+    font-family: 'Roboto';
+    font-size: 40px;
+    text-align: left;
+    margin: 0%;
+    width: auto;
+    color: black;
+    font-weight: bold;
+}
+
+#ReturnPolicys h1{
+    font-family: 'Roboto';
+    font-size: 35px;
+    text-align: left;
+    margin: 20px 0px 10px 0px;
+    width: auto;
+    color: black;
+    font-weight:bolder;
+}
+
+#ReturnPolicys h2 {
+    font-family: 'Roboto';
+    font-size: 22px;
+    color: black;
+    text-align: left;
+    margin: 10px 0px 15px 0px;
+    width: auto;
+    font-weight: normal;
+}
+
+#ReturnPolicys h3 {
+    font-family: 'Roboto';
+    font-size: 20px;
+    text-align: justify;
+    margin: 20px 0px 50px 0px;
+    width: auto;
+    color: rgb(92, 92, 92);
+    font-weight: lighter;
+    text-align: right;
+}
+

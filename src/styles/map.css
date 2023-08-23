@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+ 
+  #map  {
+   background: #fff;
+   background-color: #fff;
+   margin-bottom: 30px;
+  }
+
+  #map h{
+    font-family: 'Roboto';
+    font-size: 55px;
+    color: #4a610f;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  #map h2{
+    font-family: 'Roboto';
+    font-size: 30px;
+    color: #000;
+  }
+
+  #map h3{
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #716c6a;
+  }
+
+  #content-map{
+    margin-left: 100px;
+    margin-top: 20px;
+}

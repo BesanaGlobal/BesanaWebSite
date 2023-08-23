@@ -1,0 +1,10 @@
+/* Webfont: Allegory-Regular */@font-face {
+    font-family: 'Allegory';
+    src: url('../fonts/fonts/Allegory.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/fonts/Allegory.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/fonts/Allegory.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/fonts/Allegory.woff2') format('woff2'), /* Modern Browsers */
+         url('../fonts/fonts/Allegory.ttf') format('truetype'); /* Safari, Android, iOS */
+    text-rendering: optimizeLegibility;
+}
+

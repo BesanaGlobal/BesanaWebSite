@@ -1,0 +1,34 @@
+/*style={{ marginTop: 140, align:'center', backgroundColor: "#ffffff", paddingBottom: 75, boxShadow: 0}}*/
+
+.img-carrousel{
+    margin-top: 140px;
+    align-items: center;
+    background-color: white;
+    padding-bottom: 75px;
+    box-shadow: 0px;
+}
+.img-carrousel img{
+    width: 100%;
+    height: 750px;
+}
+.img-carrousel-box{
+    height: 100%;
+    box-shadow: none;
+}
+@media screen and (max-width: 900px) {
+    .img-carrousel{
+        margin-top: 120px;
+        align-items: center;
+        background-color: white;
+        padding-bottom: 75px;
+        box-shadow: 0px;
+    }
+    .img-carrousel img{
+        width: 100%;
+        height: 300px;
+    }
+    .img-carrousel-box{
+        height: 40%;
+        box-shadow: none;
+    }
+  }

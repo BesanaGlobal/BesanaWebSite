@@ -1,0 +1,25 @@
+/* oportunity Section */
+#oportunity {
+    padding: 100px 0;
+    background: #fff;
+    margin-top: 100px;
+  }
+  
+  #oportunity img{
+    width: 85%;
+  }
+
+  #oportunity .social-line {
+    background: linear-gradient(to right, #02ade7e3 0%, #91d010 100%);
+    width: 48%;
+  }
+  
+  #productimage{
+    background-image: linear-gradient(to right, #2d5b25 , #092000);
+  }
+  
+  #oportunity i {
+    color: #e6e6e6;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+thead{
+
+  justify-content: center;
+  background-color: #375414;
+  color: #f6f6f6;
+  font-weight: bold;
+  padding: 10%;
+}
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.tdescription{
+  width: 150px;
+  border-right: 1px solid #ccc;
+}
+
+ td  {
+
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+  th, td {
+    font-size: 14px;
+  }
+}
+
+.details{
+  margin-top: 160px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding-bottom: 40px;
+}
+
+.detail-img{
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.detail-img img{
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.detail-content{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+  font-family: 'Roboto';
+}
+
+.content-name{
+  text-align: center;
+  font-size: 40px;
+}
+
+.content-price{
+  text-align: center;
+  font-size: 30px;
+}
+
+.content-description{
+  text-align: justify;
+  padding-bottom: 20px;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.content-summary{
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.summary-list{
+  margin-left: 25px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.content-button{
+  text-align: center;
+  font-size: 30px;
+}
+
+.content-buy{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bt {
+  background-color: #eaa9a9;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.bt:hover {
+  background-color: #b77b7b;
+}
+
+.btcart {
+  width: fit-content;
+  background-color: #578123;
+  color: #fff;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 3px;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+
+.btcart:hover {
+
+  background-color: #435f20;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 900px)
+  {
+    .details{
+      margin-top: 120px;
+      display: grid;
+      grid-template-columns: 1fr;
+      padding-bottom: 40px;
+    }
+    
+    .detail-img{
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .detail-img img{
+      max-width: 300px;
+      max-height: 300px;
+    }
+    
+    .detail-content{
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+      font-family: 'Roboto';
+    }
+    
+    .content-name{
+      text-align: center;
+      font-size: 40px;
+    }
+    
+    .content-price{
+      text-align: center;
+      font-size: 30px;
+    }
+    
+    .content-description{
+      text-align: justify;
+      padding-bottom: 20px;
+      font-size: 15px;
+    }
+    
+    .content-button{
+      text-align: center;
+      font-size: 30px;
+    }
+    
+    .content-buy{
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }

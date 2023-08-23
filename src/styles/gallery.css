@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+.title-section-home {
+  text-transform: capitalize;
+}
+
+.menu-link-without-background-beauty {
+  font-family: 'Dancing Script';
+  color: #c08f8f;
+  background-color: #fff;
+  text-transform: capitalize;
+  margin: 60px 0 0 0;
+  font-weight: 100;
+  font-size: 70px ;
+  text-decoration: none;
+  margin-left: 10px;
+  border-radius: 7px;
+}
+
+div .container{
+  padding: 50px 0px;
+}
+
+div .section-title {
+  margin-bottom: 70px;
+}
+.section-title a {
+  font-size: 18px;
+  color: #777;
+}
+
+/*------------GRID PRODUCTOS--------------*/
+
+.productos{
+  padding: 5rem 1rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+  gap: 3rem 5rem;
+  box-sizing: border-box;
+}
+
+.producto{
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 0px 25px 1px #e0b7b8;
+  border-radius: 20px;
+  padding-top: 20px;
+  display: grid;
+  grid-template-rows: 1fr 100px;
+}
+
+.producto-img img{
+  width: 350px;
+}
+
+.producto-detalle{
+  padding-top: 10px;
+  background: rgb(243 227 227);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  max-height: 100px;
+}
+
+.producto-footer{
+  display: grid;
+  grid-template-columns: 1fr;
+  height: max-content;
+}
+
+.producto-detalle h1{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 3px 0px;
+  color: #701649;
+  text-align: center;
+  font-family: 'Roboto';
+  width: 100%;
+  height: auto;
+}
+
+.producto-detalle p{
+  margin-bottom: 10px;
+  color: #701649;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+.producto .producto-botones{
+  align-items: center;
+justify-content: center;
+  width: 100%;
+  color: #701649;
+  display: flex;
+  /* grid-template-columns: 1fr 1.5fr; */
+  gap: 1rem;
+}
+
+.producto-botones div{
+  text-align: right;
+}
+
+.producto-botones a{
+  text-decoration: none;
+  color: #701649;
+  font-family: 'Roboto';
+}

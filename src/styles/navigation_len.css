@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+.dropbtn {
+    font-family: 'Roboto';
+    background-color: #4a610f;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin-top: 10px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #4d4d4deb;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding-top: 5px;
+  }
+  
+  .dropdown-content a {
+    font-family: 'Roboto';
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #5d7a13;
+    border-radius: 7px;
+    color: #ffffff}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #5d7a13;}
+
+
+.fisrt-div-nav-bar{
+  width: 100%;
+  padding-top: 10px;
+}
+
+.button-top-header {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  background: #000000eb;
+  padding: 5px 15px;
+  border-radius: 7px;
+}
+.button-top-header:hover {
+  transform: scale(1.03);
+  color: #fff;
+}
+
+

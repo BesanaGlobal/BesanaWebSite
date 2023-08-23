@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+#company {
+    padding-top: 160px;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.company_header {
+    padding: 20px;
+}
+
+#company h3 {
+    line-height: 24px;
+    font-size: 20px;
+    text-align: justify;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#company h {
+  color: #4a610f ;
+  text-shadow: 2px 2px #000000;
+  position: relative;
+  font-size: 65px;
+  font-family: 'Roboto';
+}
+
+  #company h2 {
+    color: #fff;
+    text-shadow: 2px 2px #000000;
+    position: relative;
+    font-size: 65px;
+    font-family: 'Roboto';
+  }
+
+  #company p {
+    font-family: 'Roboto';
+    font-size: 23px;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+  }
+
+  #company .company-text li {
+    margin-bottom: 6px;
+    margin-left: 6px;
+    list-style: none;
+    padding: 0;
+  }
+
+  #company .company-text li:before {
+    content: "\f00c";
+    font-family: 'Roboto';
+    color: #5ca9fb;
+    font-size: 11px;
+    font-weight: 300;
+    padding-right: 8px;
+  }
+
+  #company img {
+    width: 520px;
+    margin-top: 10px;
+    border-right: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+  }
+  
+  #company .social-line {
+    background: linear-gradient(to right, #02ade7e3 0%, #91d010 100%);
+    width: 42%;
+  }
+  #company .container {
+    padding-left: 35px;
+    width: 100%;
+    /* background: linear-gradient(-40deg, black, #00171f 54%, white 55%, white); */
+  }
+  #company .first-container {
+    width: 100%;
+    height: 500px;
+  }
+  
+ .accordion {
+    background: rgba (0,0,0, 0.10);
+    height:350px;
+    display:flex;
+    box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
+    flex-direction: row;
+    cursor:pointer;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 100px;
+  }
+  
+.box {
+    position: relative;
+    height:100%;
+    flex:1;
+    background-position:left;
+    background-size:cover;
+    transition: .7s;
+    box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
+  }
+
+  .box:hover {
+    flex:7;
+    height:350px;
+  }
+
+  .a1 {
+    background-image: url(../img/Company/Vision.jpg);
+  }
+  
+  .a3 {
+    background-image: url(../img/Company/Mision.jpg)
+  }
+  
+  .a4 {
+    background-image: url(../img/Company/Filosofia.jpg);
+  }
+
+  .a1:hover {
+    background-image: url(../img/Company/VisionB.jpg);
+  }
+  
+  .a3:hover {
+    background-image: url(../img/Company/MisionB.jpg)
+  }
+  
+  .a4:hover {
+    background-image: url(../img/Company/FilosofiaB.jpg);
+  }
+  
+  .text-accordion {
+    text-align: left;
+    color:black;
+    bottom:0;
+    opacity:0;
+    padding: 50px 200px 40px 50px;
+    position: relative;
+  }
+
+  .box:hover .text-accordion {
+    opacity:1;
+  }
+
+  h1 {
+    width: 250px;
+    text-align:left;
+    margin:100px auto 20px auto;
+    font-family: 'Roboto';
+  }
+  
+  @media screen and (max-width: 900px)
+  {
+    #company {
+      padding-top: 110px;
+      background-color: #ffffff;
+      width: 100%;
+  }
+  
+  .company_header {
+      padding: 20px;
+  }
+  
+  #company h3 {
+      line-height: 24px;
+      font-size: 15px;
+      text-align: justify;
+      margin-right: 30px;
+      margin-left: 30px;
+  }
+  
+  #company h {
+    color: #4a610f;
+    text-shadow: 2px 2px #000000;
+    position: relative;
+    font-size: 38px;
+    font-family: 'Roboto';
+  }
+  
+    #company h2 {
+      color: #fff;
+      text-shadow: 2px 2px #000000;
+      position: relative;
+      font-size: 35px;
+      font-family: 'Roboto';
+    }
+  
+    #company p {
+      font-family: 'Roboto';
+      font-size: 15px;
+      color: #ffffff;
+      text-shadow: 2px 2px #000000;
+    }
+  
+    #company .company-text li {
+      margin-bottom: 6px;
+      margin-left: 6px;
+      list-style: none;
+      padding: 0;
+    }
+  
+    #company .company-text li:before {
+      content: "\f00c";
+      font-family: 'Roboto';
+      color: #5ca9fb;
+      font-size: 11px;
+      font-weight: 300;
+      padding-right: 8px;
+    }
+  
+    #company img {
+      width: 520px;
+      margin-top: 10px;
+      border-right: 0;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+    }
+    
+    #company .social-line {
+      background: linear-gradient(to right, #02ade7e3 0%, #91d010 100%);
+      width: 42%;
+    }
+    #company .container {
+      padding-left: 35px;
+      width: 100%;
+      /* background: linear-gradient(-40deg, black, #00171f 54%, white 55%, white); */
+    }
+    #company .first-container {
+      width: 100%;
+      height: 500px;
+    }
+    
+   .accordion {
+      Background-color: transparent;
+      height:350px;
+      display:flex;
+      box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
+      flex-direction: column;
+      cursor:pointer;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-bottom: 250px;
+    }
+    
+  .box {
+      position: relative;
+      height:150%;
+      flex:7;
+      background-position:left;
+      background-size:cover;
+      background-color: transparent;
+      transition: .7s;
+      box-shadow: 0px 20px 30px rgba(0,0,0, 0.47);
+      margin: 5px;
+    }
+  
+    .a1 {
+      background-image: url(../img/Company/VisionB.jpg);
+    }
+    
+    .a3 {
+      background-image: url(../img/Company/MisionB.jpg)
+    }
+    
+    .a4 {
+      background-image: url(../img/Company/FilosofiaB.jpg);
+    }
+    
+    .text-accordion {
+      text-align: left;
+      color:black;
+      bottom:0;
+      opacity:1;
+      padding: 10px;
+      position: relative;
+    }
+  
+    h1 {
+      width: 250px;
+      text-align:left;
+      margin:100px auto 20px auto;
+      font-family: 'Roboto';
+    }
+  }
+  

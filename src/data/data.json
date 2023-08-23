@@ -1,0 +1,216 @@
+{
+  "Header": {
+    "title": "BESANA GLOBAL",
+    "paragraph": "Somos una compañia en crecimiento que ofrece soluciones integrales con productos de alta calidad."
+  },
+  "About": {
+    "paragraph": "Somos una compañía que busca mejorar la calidad de vida de las personas tanto física como económicas, estamos comprometidos con cada uno de nuestros miembros a través del trabajo y experiencia de profesionales en la industria de mercadeo en red quienes se encargan de reforzar tu conocimiento y proveerte materiales y herramientas que necesitas para metas, objetivos y el estilo de vida deseado. Estamos trabajando en diferentes ciudades del país, dispuestos a actuar donde nos necesiten.",
+    "Why": [
+      "Lorem ipsum dolor",
+      "Tempor incididunt",
+      "Lorem ipsum dolor",
+      "Incididunt ut labore"
+    ],
+    "Why2": [
+      "Aliquip ex ea commodo",
+      "Lorem ipsum dolor",
+      "Exercitation ullamco",
+      "Lorem ipsum dolor"
+    ]
+  },
+  "Gallery": [
+    {
+      "id": "1613d058-4e43-4a59-bae1-3802e134a213",
+      "price": 100,
+      "title": "Anti-Aging Day Cream",
+      "largeImage": "img/portfolio/CreamDay.png",
+      "smallImage": "img/portfolio/CreamDay.png"
+    },
+    {
+      "id": "10914b53-2064-4011-8004-2eb4e61e4904",
+      "price": 100,
+      "title": "Anti-Aging Eye Cream",
+      "largeImage": "img/portfolio/EyeCream.png",
+      "smallImage": "img/portfolio/EyeCream.png"
+    },
+    {
+      "id": "a3661371-34ec-4192-bf2c-0e92489f1d52",
+      "price": 100,
+      "title": "Anti-Aging Eye Serum",
+      "largeImage": "img/portfolio/EyeSerum.png",
+      "smallImage": "img/portfolio/EyeSerum.png"
+    },
+    {
+      "id": "7fb9b519-d6ee-4a29-a96a-c2fa1abb1a3f",
+      "price": 100,
+      "title": "Anti-Aging Night Cream",
+      "largeImage": "img/portfolio/NightCream.png",
+      "smallImage": "img/portfolio/NightCream.png"
+    },
+    {
+      "id": "5eca6da7-e55b-4eed-afcf-a4ad3bb578b1",
+      "price": 100,
+      "title": "Facial Cleanser",
+      "largeImage": "img/portfolio/Cleanser.png",
+      "smallImage": "img/portfolio/Cleanser.png"
+    }
+  ],
+  "HealthProducts": [
+    {
+      "id": "16f22549-391f-4884-9ea4-a4e1e2c0ae78",
+      "price": 100,
+      "title": "CBG5",
+      "largeImage": "img/portfolio/CBG5.png",
+      "smallImage": "img/portfolio/CBG5.png"
+    }
+  ],
+  "Carousel": [
+    {
+      "title": "Wellcome",
+      "esImage": "img/carousel/Bienvenidos.png",
+      "enImage": "img/carousel/Wellcome.png"
+    },
+    {
+      "title": "Opportunity",
+      "esImage": "img/carousel/Oportunidad.png",
+      "enImage": "img/carousel/Oportunity.png"
+    },
+    {
+      "title": "Products",
+      "esImage": "img/carousel/Productos.png",
+      "enImage": "img/carousel/Product.png"
+    },
+    {
+      "title": "Pillars",
+      "esImage": "img/carousel/Pilares.png",
+      "enImage": "img/carousel/Pillars.png"
+    }
+
+  ],
+  "CarouselSmallDevices": [
+    {
+      "title": "Wellcome",
+      "esImage": "img/carousel/Bienvenidos_SD.png",
+      "enImage": "img/carousel/Wellcome_SD.png"
+    },
+    {
+      "title": "Opportunity",
+      "esImage": "img/carousel/Oportunidad_SD.png",
+      "enImage": "img/carousel/Oportunity_SD.png"
+    },
+    {
+      "title": "Products",
+      "esImage": "img/carousel/Productos_SD.png",
+      "enImage": "img/carousel/Product_SD.png"
+    },
+    {
+      "title": "Pillars",
+      "esImage": "img/carousel/Pilares_SD.png",
+      "enImage": "img/carousel/Pillars_SD.png"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-wordpress",
+      "name": "Lorem ipsum dolor",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    },
+    {
+      "icon": "fa fa-cart-arrow-down",
+      "name": "Consectetur adipiscing",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    },
+    {
+      "icon": "fa fa-cloud-download",
+      "name": "Lorem ipsum dolor",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/04.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/05.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/06.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "John Doe",
+      "job": "Director"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Mike Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Jane Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Karen Doe",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "address": "4321 California St, San Francisco, CA 12345 ",
+    "phone": "+1 123 456 1234",
+    "email": "info@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-eye",
+      "title": "Visión",
+      "text": "Consolidarnos como un equipo que logre desarrollar capacidades en cada una de las personas para que logren sus propios objetivos"
+    },
+    {
+      "icon": "fa fa-building",
+      "title": "Misión",
+      "text": "Asegurar la calidad y profesionalismo de nuestros socio y que garanticen la transparencia y el logro de resultados, apostando por una compañía que sea solida y que llene las exigencias de nuestro equipo."
+    },
+    {
+      "icon": "fa fa-magic",
+      "title": "Filosofía",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    }
+  ],
+
+  "Publicity": {
+    "image": "https://img.freepik.com/psd-gratis/maqueta-embalaje-producto-cosmetico_1150-40284.jpg?w=1060"
+  },
+
+  "Details": {
+    "image": "https://besanaglobal.com/wp-content/uploads/2021/01/producto-besanaglobal-cbg5hd-06_CBG5-1.png"
+  }
+}

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+  #promotion img {
+    display: block;
+    margin: auto;
+    border-right: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  
+  #promotion  {
+   background: #fff;
+  }
+
+  #promotion h{
+    font-family: 'Dancing Script';
+    font-size: 75px;
+    color: #88b900;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  #promotion h2{
+    font-family: 'Roboto';
+    font-size: 30px;
+    color: #000;
+  }
+
+  #promotion h3{
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #716c6a;
+  }
+
+  .button {
+    background-color: #4a610f;
+    border: none;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 15px;
+  }
+
+  #content-promotion{
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 900px) {
+
+  #promotion img {
+    display: block;
+    margin: auto;
+    border-right: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  
+  #promotion  {
+   background: #fff;
+  }
+
+  #promotion h{
+    font-family: 'Dancing Script';
+    font-size: 55px;
+    color: #88b900;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  #promotion h2{
+    font-family: 'Roboto';
+    font-size: 30px;
+    color: #000;
+  }
+
+  #promotion h3{
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #716c6a;
+  }
+
+  .button {
+    background-color: #4a610f;
+    border: none;
+    color: #fff;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 2px;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 15px;
+  }
+
+  #content-promotion{
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+}
