@@ -44,7 +44,8 @@
         "Ingredient1": "Cucumber extract",
         "Ingredient2": "Green Tea",
         "Ingredient3": "Deionized water",
-        "Button": "Add to cart"
+        "Button": "Add to cart",
+        "Price": "Price"
     },
 
     "Company": {

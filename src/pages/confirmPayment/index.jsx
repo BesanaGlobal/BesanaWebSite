@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { Navigation } from "../../components/navigation";
 import getSymbolFromCurrency from 'currency-symbol-map'
 import { useState } from 'react';
+import StatesAndCities from "../../components/StatesAndCities";
 
 const ConfirmPayment = () => {
   const [taxTotal, setTaxTotal] = useState({
@@ -84,7 +85,7 @@ const ConfirmPayment = () => {
       console.log('ver estado para tax')
       console.log(stateUp)
    
-      if (stateUp==='NEVADA') {
+      if (stateUp === 'NEVADA') {
           let sTotalTax =total*8.375/100;
           let taxN=Number(sTotalTax.toFixed(2));
           let sum=taxN+total+7;
@@ -95,9 +96,6 @@ const ConfirmPayment = () => {
             total:TotalN,
             envio:7
           });
-      
-       
-
       }else{
           let sTotalTax =0;
           let taxN=Number(sTotalTax.toFixed(2));
@@ -168,8 +166,8 @@ const ConfirmPayment = () => {
         shipping:taxTotal.envio
       }
       var response = await AxiosPost('Buy', OrdersModel);
-      console.log(response.mensaje)
-      alert(response.mensaje);
+      console.log(response.message)
+      alert(response.message);
     dispatch(clearCart());
     navigate("/");
       
@@ -324,7 +322,6 @@ const ConfirmPayment = () => {
                     )}
                     <br />
                   </div>
-
                   <div class="col-50">
                     <h3>Payment</h3>
                     <div className="acceptedCards">
@@ -339,6 +336,10 @@ const ConfirmPayment = () => {
                     <StripeInput></StripeInput>
                   </div>
                 </div>
+
+                <div>
+                    <StatesAndCities></StatesAndCities>
+                  </div>
 
                 <input
                   type="submit"
@@ -362,26 +363,26 @@ const ConfirmPayment = () => {
                   <p>
                     <a href="#">{item.name}</a>{" "}
                     <span class="price">
-                      {mapCurrentFormat(item.price*convertir)} x </span>
+                      {mapCurrentFormat(item.price * convertir)} x </span>
                     <b>{item.quantity}</b>
                   </p>
                 );
               })}
               
-              <p class="price">Tax: {mapCurrentFormat(taxTotal.taxproducto*convertir)}</p>
-              <p class="price">Envio: {mapCurrentFormat((taxTotal.envio*convertir).toFixed(2))}</p>
+              <p class="price">Tax: {mapCurrentFormat(taxTotal.taxproducto * convertir)}</p>
+              <p class="price">Envio: {mapCurrentFormat((taxTotal.envio * convertir).toFixed(2))}</p>
 
 
               <p>
                 Total{" "}
                 <span class="price">
                   <b>
-                    {mapCurrentFormat(taxTotal.total*convertir)}
-                    {/* {mapCurrentFormat(cart.reduce(
+                    {/* {mapCurrentFormat(taxTotal.total * convertir)} */}
+                    {mapCurrentFormat(cart.reduce(
                       (partialSum, a) =>
                         partialSum + a.price * a.quantity,
                       0
-                    ))} */}
+                    ))}
 
                   </b>
                 </span>
