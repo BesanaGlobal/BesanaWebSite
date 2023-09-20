@@ -339,7 +339,6 @@ const ConfirmPayment = () => {
                     <StripeInput></StripeInput>
                   </div>
                 </div>
-
                 <input
                   type="submit"
                   disabled={!stripe}
