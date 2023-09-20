@@ -23,7 +23,7 @@ export const Oportunity = (props) => {
         </div> */}
             {/* <img src="img/Oportunity/GetMoney.png" style={{ marginTop: -310 }}/> */}
             {
-              i18n.language == 'es' ? <img src="img/Oportunity/OPORTUNIDAD.jpg"/> : <img src="img/Oportunity/OPORTUNITY.jpg"/>   
+              i18n.language == 'es' ? <img src="img/Oportunity/OPORTUNIDAD.png"/> : <img src="img/Oportunity/OPORTUNITY.png"/>   
             }
         </div>
     </div>
