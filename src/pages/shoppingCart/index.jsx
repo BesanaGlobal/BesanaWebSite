@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
   clearCart,
-  //   decreaseCart,
+  decreaseCart,
   delFromCart,
 } from "../../actions/shoppingAction";
 import { AxiosPost } from '../../api/axios'
@@ -187,8 +187,7 @@ const ShoppingCart = () => {
 
                     {mapCurrentFormat(cart.reduce(
                       (partialSum, a) =>
-                       ( ((partialSum + a.price) * a.quantity)*convertir),
-                      0
+                       ( ( (partialSum + a.price) * a.quantity) * convertir), 0
                     ).toFixed(2))}
                   </span>
                 </div>

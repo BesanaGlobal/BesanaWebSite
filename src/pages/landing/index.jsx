@@ -8,9 +8,7 @@ import { Gallery } from "../../components/gallery";
 import { Publicity } from "../../components/screenImage";
 import { Footer } from "../../components/footer";
 import { useDispatch } from "react-redux";
-import {
-    setProductList,
-} from "../../actions/shoppingAction";
+import {setProductList,} from "../../actions/shoppingAction";
 import { ProductDetails } from "../../components/productDetails";
 import { useNavigate, useLocation } from "react-router-dom";
 import { addSponsor } from "../../actions/userActions";
