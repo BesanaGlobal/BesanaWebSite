@@ -61,12 +61,13 @@ const ShoppingCart = () => {
   let query = useQuery();
   const { cart } = state.shopping;
   const dispatch = useDispatch();
-
+// console.log(cart)
   const handleAddToCart = (product) => {
     dispatch(addToCart(product.idProd));
   };
-  const handleDecreaseCart = (product) => {
-    dispatch(delFromCart(product.id));
+  const handleDecreaseCart = (product,quantity) => {
+    
+    dispatch(decreaseCart(product.idProd, quantity.quantity));
   };
   const handleRemoveFromCart = (product) => {
 
@@ -107,6 +108,7 @@ const ShoppingCart = () => {
     }
     return sposorName
   }
+
 
   return (
     <>
@@ -185,10 +187,12 @@ const ShoppingCart = () => {
                   <span>Subtotal</span>
                   <span className="amount">
 
-                    {mapCurrentFormat(cart.reduce(
+                    {  mapCurrentFormat(cart.reduce(
                       (partialSum, a) =>
-                       ( ( (partialSum + a.price) * a.quantity) * convertir), 0
-                    ).toFixed(2))}
+                       ( partialSum + a.price * (a.quantity) * convertir ), 0
+                    ).toFixed(2)) }
+
+
                   </span>
                 </div>
                 <p>Taxes and shipping calculated at checkout</p>
