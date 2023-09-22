@@ -12,13 +12,6 @@ import getSymbolFromCurrency from 'currency-symbol-map'
 import { useState } from 'react';
 
 const ConfirmPayment = () => {
-  const [taxTotal, setTaxTotal] = useState({
-    taxproducto:0,
-    taxState:0,
-    total:0,
-    envio:0
-  });
-  // const [taxTotal, setTaxTotal] = useState(0);
 
   const state = useSelector((state) => state);
   const navigate = useNavigate();
@@ -28,114 +21,86 @@ const ConfirmPayment = () => {
   const stripe = useStripe();
   const element = useElements();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const sponsorGet=sponsor.data.data;
+  const sponsorGet = sponsor.data.data;
 
-  const lenguage=window.localStorage.getItem('country')??'USA'
-  const curren=window.localStorage.getItem('currency')??'USD'
+  const lenguage = window.localStorage.getItem('country') ?? 'USA'
+  const curren = window.localStorage.getItem('currency') ?? 'USD'
   console.log(curren)
-  var convertir=0;
+  var convertir = 0;
 
   switch (lenguage) {
     case 'USA':
-      convertir=1;
-        break;
-
-   case 'USA (es)':
-          convertir=1;
-            break;
+      convertir = 1;
+      break;
+    case 'USA (es)':
+      convertir = 1;
+      break;
     case 'Guatemala':
-        convertir= 7.8 ;
-
-        break;
+      convertir = 7.8;
+      break;
     case 'Colombia':
-
-        convertir=4171.57;
-        break;
+      convertir = 4171.57;
+      break;
     case 'México':
-        convertir=17.28;
-
-        break;
+      convertir = 17.28;
+      break;
     case 'Panama':
-          convertir=1
-        break;
+      convertir = 1
+      break;
     default:
-          // eslint-disable-next-line no-unused-vars
-          convertir=1;
+      // eslint-disable-next-line no-unused-vars
+      convertir = 1;
+      break;
+  }
 
-        break;
-   }
-
-  var total= cart.reduce(
+  let total = cart.reduce(
     (partialSum, a) =>
       partialSum + a.price * a.quantity,
     0
   )
-    console.log(total)
 
-    cart.map((item) => {
-      console.log(item)
+  const [taxTotal, setTaxTotal] = useState({
+    taxproducto: 0,
+    taxState: 0,
+    total: total,
+    envio: 0
+  });
 
-    })
+  const VerifarTax = (e) => {
+    e.preventDefault();
+    let stateUp = e.target.value.toUpperCase();
 
-    const VerifarTax=(e)=>{
-      e.preventDefault();
-      console.log(e);
-      let stateUp=e.target.value.toUpperCase();
-      console.log('ver estado para tax')
-      console.log(stateUp)
-
-      if (stateUp==='NEVADA') {
-          let sTotalTax =total*8.375/100;
-          let taxN=Number(sTotalTax.toFixed(2));
-          let sum=taxN+total+7;
-          let TotalN=Number(sum.toFixed(2));
-          setTaxTotal({
-            taxproducto:taxN,
-            taxState:8.375,
-            total:TotalN,
-            envio:7
-          });
-
-
-
-      }else{
-          let sTotalTax =0;
-          let taxN=Number(sTotalTax.toFixed(2));
-          let sum=total+7;
-          var TotalN=Number(sum.toFixed(2));
-          setTaxTotal({
-            taxproducto:taxN,
-            taxState:0,
-            total:TotalN,
-            envio:7
-          });
-      }
-
-      console.log('objeto tax')
-      console.log(taxTotal)
-
-
-
-
-      console.log(taxTotal)
-
+    if (stateUp === 'NEVADA') {
+      let sTotalTax = total * 8.375 / 100;
+      let taxN = Number(sTotalTax.toFixed(2));
+      let sum = taxN + total + 7;
+      let TotalN = Number(sum.toFixed(2));
+      setTaxTotal({
+        taxproducto: taxN,
+        taxState: 8.375,
+        total: TotalN,
+        envio: 7
+      });
+    } else {
+      let sTotalTax = 0;
+      let taxN = Number(sTotalTax.toFixed(2));
+      let sum = total + 7;
+      var TotalN = Number(sum.toFixed(2));
+      setTaxTotal({
+        taxproducto: taxN,
+        taxState: 0,
+        total: TotalN,
+        envio: 7
+      });
     }
-
+  }
 
   const onSubmit = async (event) => {
-//SACAR EL TAX
-
-    console.log('vemos cuanto lleva tax');
-
     if (!stripe || !element) {
       return;
     }
-
     const result = await stripe.createToken(element.getElement(CardElement));
-
     if (result.token) {
-
-
       const OrdersModel = {
         user: {
           id: '',
@@ -151,29 +116,25 @@ const ConfirmPayment = () => {
           city: event.city,
         },
         producDetail: cart.map((item) => {
-          let taxproduct = (item.price*taxTotal.taxState)/100;
-          console.log(taxproduct);
+          let taxproduct = (item.price * taxTotal.taxState) / 100;
           return {
             idProduct: item.idProd,
-            nameProduct:item.name,
-            price:item.price,
-            taxProduct:taxproduct,
+            nameProduct: item.name,
+            price: item.price,
+            taxProduct: taxproduct,
             quantityProduct: item.quantity,
-            subtotal:item.price*item.quantity+taxproduct
+            subtotal: item.price * item.quantity + taxproduct
           }
         }),
         tokenCard: result.token.id,
         BuyType: 'CREDIT_CAR',
-        total:taxTotal.total,
-        shipping:taxTotal.envio
+        total: taxTotal.total,
+        shipping: taxTotal.envio
       }
       var response = await AxiosPost('Buy', OrdersModel);
-      console.log(response.message)
       alert(response.message);
-    dispatch(clearCart());
-    navigate("/");
-
-
+      dispatch(clearCart());
+      navigate("/");
     } else {
       alert('Error: ' + result.error.message)
     }
@@ -303,7 +264,7 @@ const ConfirmPayment = () => {
                       id="state"
                       name="state"
                       placeholder="State"
-                      onBlur={(e)=>VerifarTax(e) }
+                      onBlur={(e) => VerifarTax(e)}
                     />
                     {errors.state && (
                       <span class="error">This field is required</span>
@@ -330,9 +291,9 @@ const ConfirmPayment = () => {
                     <div className="acceptedCards">
                       <label for="fname">Accepted Cards</label>
                       <div class="icon-container">
-                        <i style={{ marginRight: "5px"}} class="fa fa-cc-visa"></i>
-                        <i style={{ marginRight: "5px"}} class="fa fa-cc-amex"></i>
-                        <i style={{ marginRight: "5px"}}class="fa fa-cc-mastercard"></i>
+                        <i style={{ marginRight: "5px" }} class="fa fa-cc-visa"></i>
+                        <i style={{ marginRight: "5px" }} class="fa fa-cc-amex"></i>
+                        <i style={{ marginRight: "5px" }} class="fa fa-cc-mastercard"></i>
                         <i class="fa fa-cc-discover"></i>
                       </div>
                     </div>
@@ -362,27 +323,20 @@ const ConfirmPayment = () => {
                   <p>
                     <a href="#">{item.name}</a>{" "}
                     <span class="price">
-                      {mapCurrentFormat(item.price*convertir)} x </span>
+                      {mapCurrentFormat(item.price * convertir)} x </span>
                     <b>{item.quantity}</b>
                   </p>
                 );
               })}
 
-              <p class="price">Tax: {mapCurrentFormat(taxTotal.taxproducto*convertir)}</p>
-              <p class="price">Envio: {mapCurrentFormat((taxTotal.envio*convertir).toFixed(2))}</p>
-
+              <p class="price">Tax: {mapCurrentFormat(taxTotal.taxproducto * convertir)}</p>
+              <p class="price">Envio: {mapCurrentFormat((taxTotal.envio * convertir).toFixed(2))}</p>
 
               <p>
                 Total{" "}
                 <span class="price">
                   <b>
-                    {mapCurrentFormat(taxTotal.total*convertir)}
-                    {/* {mapCurrentFormat(cart.reduce(
-                      (partialSum, a) =>
-                        partialSum + a.price * a.quantity,
-                      0
-                    ))} */}
-
+                    {mapCurrentFormat(taxTotal.total * convertir)}
                   </b>
                 </span>
               </p>

@@ -35,8 +35,9 @@ export const getCurrencyApi = async (url, currency) => {
 export const AxiosPost = async (url, params = {}) => {
   try {
     if (url==='Buy') {
-      let result = await instance.post(url, params);
-      return result.data;
+      
+        let result = await instance.post(url, params);
+        return result.data;
     }
     if(url==='Sponsor'){
       console.log(params)
