@@ -34,26 +34,26 @@ const ConfirmPayment = () => {
   const curren=window.localStorage.getItem('currency')??'USD'
   console.log(curren)
   var convertir=0;
- 
+
   switch (lenguage) {
     case 'USA':
       convertir=1;
         break;
-        
+
    case 'USA (es)':
           convertir=1;
             break;
     case 'Guatemala':
         convertir= 7.8 ;
-        
+
         break;
     case 'Colombia':
-      
+
         convertir=4171.57;
         break;
     case 'México':
         convertir=17.28;
-        
+
         break;
     case 'Panama':
           convertir=1
@@ -74,7 +74,7 @@ const ConfirmPayment = () => {
 
     cart.map((item) => {
       console.log(item)
-      
+
     })
 
     const VerifarTax=(e)=>{
@@ -83,7 +83,7 @@ const ConfirmPayment = () => {
       let stateUp=e.target.value.toUpperCase();
       console.log('ver estado para tax')
       console.log(stateUp)
-   
+
       if (stateUp==='NEVADA') {
           let sTotalTax =total*8.375/100;
           let taxN=Number(sTotalTax.toFixed(2));
@@ -95,8 +95,8 @@ const ConfirmPayment = () => {
             total:TotalN,
             envio:7
           });
-      
-       
+
+
 
       }else{
           let sTotalTax =0;
@@ -114,28 +114,28 @@ const ConfirmPayment = () => {
       console.log('objeto tax')
       console.log(taxTotal)
 
-   
-      
+
+
 
       console.log(taxTotal)
 
     }
-  
+
 
   const onSubmit = async (event) => {
 //SACAR EL TAX
-   
+
     console.log('vemos cuanto lleva tax');
-   
+
     if (!stripe || !element) {
       return;
     }
-   
+
     const result = await stripe.createToken(element.getElement(CardElement));
-   
+
     if (result.token) {
-      
-      
+
+
       const OrdersModel = {
         user: {
           id: '',
@@ -172,7 +172,7 @@ const ConfirmPayment = () => {
       alert(response.mensaje);
     dispatch(clearCart());
     navigate("/");
-      
+
 
     } else {
       alert('Error: ' + result.error.message)
@@ -339,6 +339,7 @@ const ConfirmPayment = () => {
                     <StripeInput></StripeInput>
                   </div>
                 </div>
+
                 <input
                   type="submit"
                   disabled={!stripe}
@@ -366,7 +367,7 @@ const ConfirmPayment = () => {
                   </p>
                 );
               })}
-              
+
               <p class="price">Tax: {mapCurrentFormat(taxTotal.taxproducto*convertir)}</p>
               <p class="price">Envio: {mapCurrentFormat((taxTotal.envio*convertir).toFixed(2))}</p>
 
