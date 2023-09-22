@@ -168,8 +168,8 @@ const ConfirmPayment = () => {
         shipping:taxTotal.envio
       }
       var response = await AxiosPost('Buy', OrdersModel);
-      console.log(response.mensaje)
-      alert(response.mensaje);
+      console.log(response.message)
+      alert(response.message);
     dispatch(clearCart());
     navigate("/");
 
