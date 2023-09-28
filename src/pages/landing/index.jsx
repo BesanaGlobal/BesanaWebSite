@@ -19,12 +19,13 @@ function useQuery() {
     const { search } = useLocation();
     return useMemo(() => new URLSearchParams(search), [search]);
 }
+
 const Landing = ({ data }) => {
     const isSmallDevice = window.innerWidth < 700;
     const [products, setProducts] = useState([]);
     const [gall,setGall]=useState(false);
     const dispatch = useDispatch();
-    let query = useQuery();
+    const query = useQuery();
 
     useEffect(() => {
         getProductList();
@@ -37,7 +38,6 @@ const Landing = ({ data }) => {
 
     const getProductList =  async () => {
         let currensySimbol = localStorage.getItem('currency') ?? 'USD'
-        //  let result = await getCurrencyApi('https://api.exchangeratesapi.io/v1/latest?access_key=a41e1fc4c595db3466126cafb507f63f&base=USD&symbols=', currensySimbol)
         let response = await  AxiosGet('products');
         setProducts(response)
         setGall(true);
@@ -46,9 +46,7 @@ const Landing = ({ data }) => {
     }
     return (<>
         <Navigation />
-
         <Carrousel data={isSmallDevice ? data.CarouselSmallDevices : data.Carousel} />
-      
         <Gallery data={products}  healthProductsData={data.HealthProducts}/> 
         <Promotion data={products} />
         <Publicity data={data.Publicity} />

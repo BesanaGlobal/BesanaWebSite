@@ -61,16 +61,13 @@ const ShoppingCart = () => {
   let query = useQuery();
   const { cart } = state.shopping;
   const dispatch = useDispatch();
-// console.log(cart)
   const handleAddToCart = (product) => {
     dispatch(addToCart(product.idProd));
   };
   const handleDecreaseCart = (product,quantity) => {
-    
     dispatch(decreaseCart(product.idProd, quantity.quantity));
   };
   const handleRemoveFromCart = (product) => {
-
     dispatch(delFromCart(product.id, true));
   };
   const handleClearCart = () => {

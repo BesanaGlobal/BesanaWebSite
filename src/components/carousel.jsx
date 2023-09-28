@@ -1,21 +1,26 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { Paper, Button } from '@mui/material';
+import { Paper, Button, Slide } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import "../styles/carrousel.css";
 
 
 export const Carrousel = (props) => {
     const { t, i18n } = useTranslation();
-    return (        
-        <div className='img-carrousel'>
+    return (   
+
+        <div className='img-carrousel carousel-item'>
             <Carousel className='img-carrousel-box'
-            
+            navButtonsAlwaysVisible={true}
+            fullHeightHover={true} 
+            // animation="slide"
             navButtonsProps={{
                 style: {
-                    backgroundColor: 'black',
+                    backgroundColor: 'green',
                     height: 40,
-                    width: 40
+                    width: 40,
+                    marginLeft:45,
+                    marginRight:45,
                 }
             }}
             indicatorIconButtonProps={{
@@ -34,6 +39,7 @@ export const Carrousel = (props) => {
             </Carousel>
             <div id="besanaBeauty" style={{ heigth: 5 }}></div>
         </div>
+
     )
 }
 
