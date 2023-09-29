@@ -33,7 +33,7 @@ div .section-title {
 /*------------GRID PRODUCTOS--------------*/
 
 .productos{
-  padding: 5rem 1rem;
+  
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
@@ -42,19 +42,18 @@ div .section-title {
 }
 
 .producto{
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 1px 0px 25px 1px #e0b7b8;
   border-radius: 20px;
-  padding-top: 20px;
   display: grid;
   grid-template-rows: 1fr 100px;
 }
 
 .producto-img img{
-  width: 350px;
+  object-fit: cover;
 }
 
 .producto-detalle{

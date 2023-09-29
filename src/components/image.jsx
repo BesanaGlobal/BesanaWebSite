@@ -69,7 +69,7 @@ export const Image = ({
         <div className="producto-img">
           <img src={ urlImage}
             style={{
-              maxWidth: 180,
+              maxWidth: 340,
               maxHeight: 260,
               marginBottom: 0,
               marginTop: isSmallDevice ? 50 : 0,

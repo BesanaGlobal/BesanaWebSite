@@ -56,6 +56,10 @@ export const Promotion = () => {
           <img
             src="img/portfolio/paqueteBesana.png"
             className="img-responsive"
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
             alt=""
           />{" "}
         </Grid>
