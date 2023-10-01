@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo } from "react";
+import React, {  useEffect, useMemo } from "react";
+import { useSearchParams  } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
@@ -12,7 +13,6 @@ import { addSponsor } from "../../actions/userActions"
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Navigation } from "../../components/navigation";
-import { useParams } from "react-router-dom";
 import getSymbolFromCurrency from 'currency-symbol-map'
 
 function useQuery() {
@@ -22,10 +22,10 @@ function useQuery() {
 
 const ShoppingCart = () => {
   const state = useSelector((state) => state);
-  console.log(state)
+ 
   const lenguage=window.localStorage.getItem('country')??'USA'
   const curren=window.localStorage.getItem('currency')??'USD'
-  console.log(curren)
+  
   let convertir=0;
  
   switch (lenguage) {
@@ -58,9 +58,15 @@ const ShoppingCart = () => {
         break;
    }
   const navigate = useNavigate();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
   let query = useQuery();
+
   const { cart } = state.shopping;
+
   const dispatch = useDispatch();
+
   const handleAddToCart = (product) => {
     dispatch(addToCart(product.idProd));
   };
@@ -105,6 +111,12 @@ const ShoppingCart = () => {
     }
     return sposorName
   }
+
+
+  useEffect(() => {
+    setSearchParams({'sponsor': state.user.sponsor})
+  }, [])
+  
 
 
   return (

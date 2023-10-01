@@ -27,12 +27,15 @@ const Landing = ({ data }) => {
     const dispatch = useDispatch();
     const query = useQuery();
 
+
     useEffect(() => {
         getProductList();
-        // let sposorName = query.get("sponsor")
-        // if (sposorName !== null || sposorName !== "") {
-        //     dispatch(addSponsor(sposorName))
-        // }
+         let sposorName = query.get("sponsor")
+
+         if (sposorName !== null || sposorName !== "") {
+           
+            dispatch(addSponsor(sposorName))
+        }
          
     }, [])
 

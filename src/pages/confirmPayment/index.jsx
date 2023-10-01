@@ -20,7 +20,7 @@ const ConfirmPayment = () => {
   const dispatch = useDispatch();
   const stripe = useStripe();
   const element = useElements();
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const sponsorGet = sponsor.data.data;
 
   const lenguage = window.localStorage.getItem('country') ?? 'USA'
