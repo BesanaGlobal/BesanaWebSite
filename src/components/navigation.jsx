@@ -39,15 +39,17 @@ export const Navigation = (props) => {
   const state = useSelector((state) => state);
   const type = typeof state.user.sponsor
 
-  if (type=='object') {
-    sponsorNavigation= state.user.sponsor.data.data
-  }
+    // if (type === 'object') {
+    //   sponsorNavigation= state.user.sponsor
+    // }
 
   // console.log('nuevo dato sponsor')
   // console.log(sponsorNavigation)
 
    const { shopping: { cart }, user } = state;
-   const { sponsor }=user;
+   
+   const { sponsor } = user;
+
   const [language, setLanguage] = useState(() => {
     const languageKey = window.localStorage.getItem('country') ?? 'USA'
     return languageKey
