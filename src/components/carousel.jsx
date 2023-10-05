@@ -10,24 +10,40 @@ export const Carrousel = (props) => {
     return (   
 
         <div className='img-carrousel carousel-item'>
-            <Carousel className='img-carrousel-box'
-            navButtonsAlwaysVisible={true}
-            fullHeightHover={true} 
-            // animation="slide"
-            navButtonsProps={{
-                style: {
-                    backgroundColor: 'green',
-                    height: 40,
-                    width: 40,
-                    marginLeft:45,
-                    marginRight:45,
-                }
-            }}
-            indicatorIconButtonProps={{
-                style: {
-                    fontSize: "50px"
-                }
-            }}
+            <Carousel 
+            position = "static"
+                className='img-carrousel-box'
+                autoPlay
+                showArrows={true}
+                showStatus={true}
+                width={960}
+                stopOnHover={false}
+                interval={2500}
+
+            // navButtonsAlwaysVisible={true}
+            // fullHeightHover={true} 
+            // // animation="slide"
+            // navButtonsProps={{
+            //     style: {
+            //         backgroundColor: 'green',
+            //         height: 40,
+            //         width: 40,
+            //         marginLeft:45,
+            //         marginRight:45,
+            //     }
+            // }}
+            // indicatorIconButtonProps={{
+            //     style: {
+            //         fontSize: "50px"
+            //     }
+            // }}
+
+
+
+
+           
+
+
             >
                 {props.data?.map((d, i) => (
                     <Paper key={i} {...props} elevation={0}>

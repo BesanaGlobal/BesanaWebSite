@@ -14,9 +14,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Button from '@mui/material/Button';
-import {
-  clearCart,
-} from "../actions/shoppingAction";
+import { clearCart } from "../actions/shoppingAction";
 import "../styles/navigation_op.css";
 import { Chat } from "./chat";
 import { red } from '@mui/material/colors';
@@ -46,13 +44,13 @@ export const Navigation = (props) => {
   // console.log('nuevo dato sponsor')
   // console.log(sponsorNavigation)
 
-   const { shopping: { cart }, user } = state;
-   
-   const { sponsor } = user;
+  const { shopping: { cart }, user } = state;
+  
+  const { sponsor } = user;
 
   const [language, setLanguage] = useState(() => {
-    const languageKey = window.localStorage.getItem('country') ?? 'USA'
-    return languageKey
+  const languageKey = window.localStorage.getItem('country') ?? 'USA'
+  return languageKey
   })
   const dispatch = useDispatch();
   const handleSelection = (optionSelected) => {
