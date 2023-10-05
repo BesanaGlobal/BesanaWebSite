@@ -70,8 +70,8 @@ const ShoppingCart = () => {
   const handleAddToCart = (product) => {
     dispatch(addToCart(product.idProd));
   };
-  const handleDecreaseCart = (product,quantity) => {
-    dispatch(decreaseCart(product.idProd, quantity.quantity));
+  const handleDecreaseCart = (product) => {
+    dispatch(decreaseCart(product.idProd));
   };
   const handleRemoveFromCart = (product) => {
     dispatch(delFromCart(product.id, true));
