@@ -38,12 +38,6 @@ export const Carrousel = (props) => {
             //     }
             // }}
 
-
-
-
-           
-
-
             >
                 {props.data?.map((d, i) => (
                     <Paper key={i} {...props} elevation={0}>
