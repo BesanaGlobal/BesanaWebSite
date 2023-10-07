@@ -87,9 +87,9 @@ const ShoppingCart = () => {
   const handleClick = async () => {
     var spon = true;
     while (spon) {
-     let sponsor = validateSponsor()
-     const param={
-      sponsor:sponsor
+      let sponsor = query.get("sponsor");
+     const param = {
+      sponsor
      }
     var response = await AxiosPost('Sponsor', param);
     console.log(response.data.mensaje)
@@ -102,22 +102,15 @@ const ShoppingCart = () => {
 
   }
 
-  const validateSponsor = () => {
-    let sposorName = query.get("sponsor");
-    console.log('sponsor get')
-    console.log(sposorName)
-    while (sposorName === null || sposorName === "" || sposorName === "null"|| sposorName==="no") {
-      sposorName = prompt("Please enter sponsor Name:")
-    }
-    return sposorName
-  }
-
-
   useEffect(() => {
-    setSearchParams({'sponsor': state.user.sponsor})
+    let sposorName = query.get("sponsor");
+    if(sposorName === null || sposorName === ""){
+     setSearchParams({'sponsor': 'BesanaMaster'});
+     } else {
+      setSearchParams({'sponsor': state.user.sponsor})
+     }
   }, [])
   
-
 
   return (
     <>
