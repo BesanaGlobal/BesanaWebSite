@@ -1,5 +1,5 @@
-import React, {  useEffect, useMemo } from "react";
-import { useSearchParams  } from 'react-router-dom';
+import React, { useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
@@ -7,13 +7,13 @@ import {
   decreaseCart,
   delFromCart,
 } from "../../actions/shoppingAction";
-import { AxiosPost } from '../../api/axios'
+import { AxiosPost } from "../../api/axios";
 
-import { addSponsor } from "../../actions/userActions"
+import { addSponsor } from "../../actions/userActions";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Navigation } from "../../components/navigation";
-import getSymbolFromCurrency from 'currency-symbol-map'
+import getSymbolFromCurrency from "currency-symbol-map";
 
 function useQuery() {
   const { search } = useLocation();
@@ -22,41 +22,40 @@ function useQuery() {
 
 const ShoppingCart = () => {
   const state = useSelector((state) => state);
- 
-  const lenguage=window.localStorage.getItem('country')??'USA'
-  const curren=window.localStorage.getItem('currency')??'USD'
-  
-  let convertir=0;
- 
-  switch (lenguage) {
-    case 'USA':
-      convertir=1;
-        break;
-        
-   case 'USA (es)':
-          convertir=1;
-            break;
-    case 'Guatemala':
-        convertir= 7.8 ;
-        
-        break;
-    case 'Colombia':
-      
-        convertir=4171.57;
-        break;
-    case 'México':
-        convertir=17.28;
-        
-        break;
-    case 'Panama':
-          convertir=1
-        break;
-    default:
-          // eslint-disable-next-line no-unused-vars
-          convertir=1;
 
-        break;
-   }
+  const lenguage = window.localStorage.getItem("country") ?? "USA";
+  const curren = window.localStorage.getItem("currency") ?? "USD";
+
+  let convertir = 0;
+
+  switch (lenguage) {
+    case "USA":
+      convertir = 1;
+      break;
+
+    case "USA (es)":
+      convertir = 1;
+      break;
+    case "Guatemala":
+      convertir = 7.8;
+
+      break;
+    case "Colombia":
+      convertir = 4171.57;
+      break;
+    case "México":
+      convertir = 17.28;
+
+      break;
+    case "Panama":
+      convertir = 1;
+      break;
+    default:
+      // eslint-disable-next-line no-unused-vars
+      convertir = 1;
+
+      break;
+  }
   const navigate = useNavigate();
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -79,38 +78,38 @@ const ShoppingCart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
-  const mapCurrentFormat = ((ammont) => {
-    let currencyFomrat = localStorage.getItem('currency') ?? 'USD'
-    return getSymbolFromCurrency(currencyFomrat) + ammont
-  })
+  const mapCurrentFormat = (ammont) => {
+    let currencyFomrat = localStorage.getItem("currency") ?? "USD";
+    return getSymbolFromCurrency(currencyFomrat) + ammont;
+  };
 
   const handleClick = async () => {
     var spon = true;
     while (spon) {
       let sponsor = query.get("sponsor");
-     const param = {
-      sponsor
-     }
-    var response = await AxiosPost('Sponsor', param);
-    console.log(response.data.mensaje)
+      const param = {
+        sponsor,
+      };
+      var response = await AxiosPost("Sponsor", param);
 
-     response.data.mensaje === 'yes' ? spon=false : alert('Sponsor No Existe!!, Intente de nuevo.');
+      response.data.mensaje === "yes"
+        ? (spon = false)
+        : alert("Sponsor No Existe!!, Intente de nuevo.");
     }
-    dispatch(addSponsor(response))
+    dispatch(addSponsor(response));
 
     navigate("/confirmPayment");
-
-  }
+  };
 
   useEffect(() => {
-    let sposorName = query.get("sponsor");
-    if(sposorName === null || sposorName === ""){
-     setSearchParams({'sponsor': 'BesanaMaster'});
-     } else {
-      setSearchParams({'sponsor': state.user.sponsor})
-     }
-  }, [])
-  
+    const sposorName = state.user.sponsor;
+
+    if (sposorName === null || sposorName === "") {
+      setSearchParams({ sponsor: "BesanaMaster" });
+    } else {
+      setSearchParams({ sponsor: sposorName });
+    }
+  }, []);
 
   return (
     <>
@@ -152,18 +151,21 @@ const ShoppingCart = () => {
                 cart.map((cartItem) => (
                   <div className="cart-item" key={cartItem.idProd}>
                     <div className="cart-product">
-                      <img src={`/img/portfolio/${cartItem.img}`} alt={cartItem.name} />
+                      <img
+                        src={`/img/portfolio/${cartItem.img}`}
+                        alt={cartItem.name}
+                      />
                       <div>
                         <h3>{cartItem.name}</h3>
-                        <button
-                          onClick={() => handleRemoveFromCart(cartItem)}
-                        >
+                        <button onClick={() => handleRemoveFromCart(cartItem)}>
                           Remove
                         </button>
                       </div>
                     </div>
                     <div className="cart-product-price">
-                      {mapCurrentFormat((cartItem.price*convertir).toFixed(2))}
+                      {mapCurrentFormat(
+                        (cartItem.price * convertir).toFixed(2)
+                      )}
                     </div>
                     <div className="cart-product-quantity">
                       <button onClick={() => handleDecreaseCart(cartItem)}>
@@ -175,7 +177,13 @@ const ShoppingCart = () => {
                       </button>
                     </div>
                     <div className="cart-product-total-price">
-                      {mapCurrentFormat((((cartItem.price * cartItem.quantity)*convertir)).toFixed(2))}
+                      {mapCurrentFormat(
+                        (
+                          cartItem.price *
+                          cartItem.quantity *
+                          convertir
+                        ).toFixed(2)
+                      )}
                     </div>
                   </div>
                 ))}
@@ -188,13 +196,15 @@ const ShoppingCart = () => {
                 <div className="subtotal">
                   <span>Subtotal</span>
                   <span className="amount">
-
-                    {  mapCurrentFormat(cart.reduce(
-                      (partialSum, a) =>
-                       ( partialSum + a.price * (a.quantity) * convertir ), 0
-                    ).toFixed(2)) }
-
-
+                    {mapCurrentFormat(
+                      cart
+                        .reduce(
+                          (partialSum, a) =>
+                            partialSum + a.price * a.quantity * convertir,
+                          0
+                        )
+                        .toFixed(2)
+                    )}
                   </span>
                 </div>
                 <p>Taxes and shipping calculated at checkout</p>
@@ -227,10 +237,3 @@ const ShoppingCart = () => {
 };
 
 export default ShoppingCart;
-
-
-
-
-
-
-
