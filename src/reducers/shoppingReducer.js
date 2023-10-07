@@ -5,7 +5,6 @@ import {
   REMOVE_ONE_FROM_CART,
   SET_PRODUCT,
 } from "../types";
-import JsonData from "../data/data.json";
 
 export const initialState = {
   products: [],
