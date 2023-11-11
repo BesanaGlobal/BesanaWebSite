@@ -25,7 +25,7 @@ const ConfirmPayment = () => {
 
   const lenguage = window.localStorage.getItem('country') ?? 'USA'
   const curren = window.localStorage.getItem('currency') ?? 'USD'
-  console.log(curren)
+  
   var convertir = 0;
 
   switch (lenguage) {
@@ -55,7 +55,7 @@ const ConfirmPayment = () => {
 
   let total = cart.reduce(
     (partialSum, a) =>
-      partialSum + a.price * a.quantity,
+      partialSum + (a.price - (a.price * 0.50))  * a.quantity,
     0
   )
 
@@ -120,10 +120,12 @@ const ConfirmPayment = () => {
           return {
             idProduct: item.idProd,
             nameProduct: item.name,
-            price: item.price,
+            //Navideño
+            price: item.price - (item.price * 0.50),
             taxProduct: taxproduct,
             quantityProduct: item.quantity,
-            subtotal: item.price * item.quantity + taxproduct
+            //Navideño
+            subtotal: (item.price - (item.price * 0.50) ) * item.quantity + taxproduct
           }
         }),
         tokenCard: result.token.id,
@@ -323,7 +325,7 @@ const ConfirmPayment = () => {
                   <p>
                     <a href="#">{item.name}</a>{" "}
                     <span class="price">
-                      {mapCurrentFormat(item.price * convertir)} x </span>
+                      {((item.price - (item.price * 0.50)) * convertir).toFixed(2)} x </span>
                     <b>{item.quantity}</b>
                   </p>
                 );

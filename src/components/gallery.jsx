@@ -57,7 +57,8 @@ export const Gallery = (props) => {
                   id = {item.idProd}
                   image = {item.img}
                   name = {item.name}
-                  price = {item.price}
+                  //Navideño
+                  price = {(item.price - (item.price * 0.50)).toFixed(2)}
                   descripcion = {item.description}
                   full = {item}
                 />
@@ -82,7 +83,8 @@ export const Gallery = (props) => {
                 id = {item.idProd}
                 image = {item.img}
                 name = {item.name}
-                price = {item.price}
+                //Navideño
+                price = {(item.price - (item.price * 0.50)).toFixed(2)}
                 descripcion = {item.description}
                 full = {item}
                 />

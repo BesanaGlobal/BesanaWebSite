@@ -10,7 +10,9 @@ import { useEffect } from 'react';
 
 export const Promotion = () => {
 
-  let price = 189.95
+  let price = 189.95;
+  //navideño
+  price = (price - (price * 0.50)).toFixed(2);
   let convertir = 0;
   const lenguage = window.localStorage.getItem('country') ?? 'USA'
   const curren = window.localStorage.getItem('currency') ?? 'USD'
