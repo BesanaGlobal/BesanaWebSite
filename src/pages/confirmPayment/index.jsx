@@ -55,7 +55,7 @@ const ConfirmPayment = () => {
 
   let total = cart.reduce(
     (partialSum, a) =>
-      partialSum + (a.price - (a.price * 0.50))  * a.quantity,
+      partialSum + a.price * a.quantity,
     0
   )
 
@@ -120,12 +120,10 @@ const ConfirmPayment = () => {
           return {
             idProduct: item.idProd,
             nameProduct: item.name,
-            //Navideño
-            price: item.price - (item.price * 0.50),
+            price: item.price,
             taxProduct: taxproduct,
             quantityProduct: item.quantity,
-            //Navideño
-            subtotal: (item.price - (item.price * 0.50) ) * item.quantity + taxproduct
+            subtotal: item.price * item.quantity + taxproduct
           }
         }),
         tokenCard: result.token.id,
@@ -325,7 +323,7 @@ const ConfirmPayment = () => {
                   <p>
                     <a href="#">{item.name}</a>{" "}
                     <span class="price">
-                      {((item.price - (item.price * 0.50)) * convertir).toFixed(2)} x </span>
+                      {mapCurrentFormat((item.price * convertir).toFixed(2))} x </span>
                     <b>{item.quantity}</b>
                   </p>
                 );
@@ -338,7 +336,7 @@ const ConfirmPayment = () => {
                 Total{" "}
                 <span class="price">
                   <b>
-                    {mapCurrentFormat(taxTotal.total * convertir)}
+                    {mapCurrentFormat((taxTotal.total * convertir).toFixed(2))}
                   </b>
                 </span>
               </p>

@@ -164,8 +164,8 @@ const ShoppingCart = () => {
                     </div>
                     <div className="cart-product-price">
                       {mapCurrentFormat(
-                        ((cartItem.price - (cartItem.price * 0.50)) * convertir).toFixed(2)
-                      )}
+                          (cartItem.price * convertir).toFixed(2)
+                        )}
                     </div>
                     <div className="cart-product-quantity">
                       <button onClick={() => handleDecreaseCart(cartItem)}>
@@ -179,7 +179,7 @@ const ShoppingCart = () => {
                     <div className="cart-product-total-price">
                       {mapCurrentFormat(
                         (
-                          (cartItem.price - (cartItem.price * 0.50)) *
+                          cartItem.price *
                           cartItem.quantity *
                           convertir
                         ).toFixed(2)
@@ -200,8 +200,7 @@ const ShoppingCart = () => {
                       cart
                         .reduce(
                           (partialSum, a) =>
-                          //Navideño
-                            partialSum + (a.price - (a.price * 0.50)) * a.quantity * convertir,
+                            partialSum + a.price * a.quantity * convertir,
                           0
                         )
                         .toFixed(2)
